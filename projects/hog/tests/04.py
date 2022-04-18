@@ -7,31 +7,28 @@ test = {
         {
           'code': r"""
           >>> hog_pile(25, 43)
-          962aea5f59fc55bd65ccacf4603c8f22
-          # locked
+          0
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {
           'code': r"""
           >>> hog_pile(32, 33)
-          962aea5f59fc55bd65ccacf4603c8f22
-          # locked
+          0
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {
           'code': r"""
           >>> hog_pile(7, 7)
-          c42887e7b9ffe8fc26bb57b61329f916
-          # locked
+          7
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {

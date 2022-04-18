@@ -28,10 +28,10 @@ def roll_dice(num_rolls, dice=six_sided):
     while num_rolls > 0:
         now_score = dice()
         total_score += now_score
-        if now_score == 1:
-            case_one = 1
         num_rolls -= 1
-    if case_one:
+        if now_score == 1:
+            case_one=1
+    if case_one == 1:
         return 1
     return total_score
  
@@ -87,7 +87,14 @@ def hefty_hogs(player_score, opponent_score):
     """
     # BEGIN PROBLEM 2
     if opponent_score == 0:
-        
+       return player_score
+    else:
+        while opponent_score // 10:
+            player_score = digit_fn(opponent_score%10)(player_score)
+            opponent_score //= 10
+        player_score = digit_fn(opponent_score)(player_score)
+        player_score %= 30
+        return player_score
     # END PROBLEM 2
 
 
@@ -109,6 +116,10 @@ def take_turn(num_rolls, player_score, opponent_score, dice=six_sided, goal=GOAL
     assert max(player_score, opponent_score) < goal, 'The game should be over.'
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
+    if num_rolls == 0:
+        return hefty_hogs(player_score,opponent_score)
+    else:
+        return roll_dice(num_rolls, dice)
     # END PROBLEM 3
 
 
@@ -119,7 +130,10 @@ def hog_pile(player_score, opponent_score):
     opponent_score: The total score of the other player.
     """
     # BEGIN PROBLEM 4
-    "*** YOUR CODE HERE ***"
+    if player_score !=0 and opponent_score != 0:
+        if player_score % 10 == opponent_score % 10:
+            return player_score % 10
+    return 0
     # END PROBLEM 4
 
 
@@ -162,6 +176,13 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     "*** YOUR CODE HERE ***"
     # END PROBLEM 5
     # (note that the indentation for the problem 7 prompt (***YOUR CODE HERE***) might be misleading)
+    if who:
+        score1 += take_turn(strategy1(score1,score0), score1, score0, dice, goal) 
+        score1 += hog_pile(score1,score0)
+    else:
+        score0 += take_turn(strategy0(score0,score1), score0, score1, dice, goal)
+        score0 += hog_pile(score0,score1)
+    who = next_player(who)
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
     # END PROBLEM 7
