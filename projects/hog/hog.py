@@ -312,6 +312,12 @@ def make_averaged(original_function, total_samples=1000):
     """
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    def func(*args):
+        total_score = 0
+        for i in range(total_samples):
+            total_score += original_function(*args)
+        return total_score/total_samples
+    return func
     # END PROBLEM 8
 
 
