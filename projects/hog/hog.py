@@ -87,7 +87,7 @@ def hefty_hogs(player_score, opponent_score):
     """
     # BEGIN PROBLEM 2
     if opponent_score == 0:
-       return player_score
+       return 1
     else:
         while opponent_score // 10:
             player_score = digit_fn(opponent_score%10)(player_score)
@@ -176,13 +176,14 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     "*** YOUR CODE HERE ***"
     # END PROBLEM 5
     # (note that the indentation for the problem 7 prompt (***YOUR CODE HERE***) might be misleading)
-    if who:
-        score1 += take_turn(strategy1(score1,score0), score1, score0, dice, goal) 
-        score1 += hog_pile(score1,score0)
-    else:
-        score0 += take_turn(strategy0(score0,score1), score0, score1, dice, goal)
-        score0 += hog_pile(score0,score1)
-    who = next_player(who)
+    while score0 < goal and score1 < goal:
+        if who:
+            score1 += take_turn(strategy1(score1,score0), score1, score0, dice, goal) 
+            score1 += hog_pile(score1,score0)
+        else:
+            score0 += take_turn(strategy0(score0,score1), score0, score1, dice, goal)
+            score0 += hog_pile(score0,score1)
+        who = next_player(who)
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
     # END PROBLEM 7
