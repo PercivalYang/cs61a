@@ -184,6 +184,9 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             score0 += take_turn(strategy0(score0,score1), score0, score1, dice, goal)
             score0 += hog_pile(score0,score1)
         who = next_player(who)
+        leader,message=say(score0,score1,leader)
+        if message is not None:
+            print(message)
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
     # END PROBLEM 7
@@ -220,6 +223,29 @@ def announce_lead_changes(score0, score1, last_leader=None):
     """
     # BEGIN PROBLEM 6
     "*** YOUR CODE HERE ***"
+    change_leader = lambda leader: 1-leader
+    abs = lambda score0,score1:[score0-score1 if score0-score1>0 else score1-score0]
+    if last_leader==None:
+        if score0==score1:
+            return None,None
+        elif score0-score1>0:
+            leader=0
+        else:
+            leader=1
+    elif last_leader:
+        if score1-score0>0:
+            return last_leader, None
+        elif score1==score0:
+            return None, None
+        leader = change_leader(last_leader)
+    else:
+        if score0 - score1>0:
+            return last_leader, None
+        elif score0==score1:
+            return None,None
+        leader = change_leader(last_leader)
+    message = f"Player {leader} takes the lead by {abs(score0,score1)[0]}"
+    return leader,message
     # END PROBLEM 6
 
 
