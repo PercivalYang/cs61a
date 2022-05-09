@@ -62,6 +62,11 @@ def pingpong(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n==1:
+        return -1
+    if num_eights(n) or n%8==0:
+        return 1-pingpong(n-1)
+    return -1+pingpong(n-1)
 
 
 def get_larger_coin(coin):
@@ -118,3 +123,25 @@ def count_coins(change):
     True
     """
     "*** YOUR CODE HERE ***"
+    def constrained_count(change, smallest_coin):
+        if change==0:
+            return 1
+        if change<0:
+            return 0
+        if smallest_coin==None:
+            return 0
+        without_coin = constrained_count(change, get_larger_coin(smallest_coin))
+        with_coin = constrained_count(change-smallest_coin, smallest_coin)
+        return without_coin+with_coin
+    return constrained_count(change, 1)
+
+    def constrained_count_large(change, largest_coin):
+        if change==0:
+            return 1
+        if change<0:
+            return 0
+        if largest_coin==None:
+            return 0
+        without_coin_large = constrained_count_large(change, get_smaller_coin(largest_coin))
+        with_coin_large = constrained_count(change-largest_coin,largest_coin)
+    return constrained_count_large(change,25)
