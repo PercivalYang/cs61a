@@ -14,7 +14,7 @@ def lambda_curry2(func):
     3
     """
     "*** YOUR CODE HERE ***"
-    return lambda f:lambda x:lambda y:f(x,y)
+    return lambda x:lambda y:func(x,y)
 
 
 def lambda_curry2_syntax_check():
@@ -26,7 +26,6 @@ def lambda_curry2_syntax_check():
     ['Expr', 'Return']
     """
     # You don't need to edit this function. It's just here to check your work.
-
 
 def count_cond(condition):
     """Returns a function with one parameter N that counts all the numbers from
@@ -56,7 +55,13 @@ def count_cond(condition):
     8
     """
     "*** YOUR CODE HERE ***"
-
+    def func(n):
+        count_num = 0
+        for i in range(1,n+1):
+            if condition(n,i):
+                count_num+=1
+        return count_num
+    return func
 
 def composer(f, g):
     """Return the composition function which given x, computes f(g(x)).
@@ -91,6 +96,11 @@ def composite_identity(f, g):
     False
     """
     "*** YOUR CODE HERE ***"
+    def func(n):
+        if composer(f,g)(n) == composer(g,f)(n):
+            return True
+        return False
+    return func
 
 
 def cycle(f1, f2, f3):
@@ -120,3 +130,11 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+    def func_num(n):
+        def func(number):
+            fs = [f1,f2,f3]
+            for i in range(n):
+                number = fs[i%len(fs)](number)
+            return number
+        return func
+    return func_num
