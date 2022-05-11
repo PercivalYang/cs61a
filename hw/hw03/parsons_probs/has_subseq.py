@@ -16,3 +16,10 @@ def has_subseq(n, seq):
     True
     """
     "*** YOUR CODE HERE ***"
+    if n==seq:
+        return True
+    if n<seq:
+        return False
+    if seq%10==n%10:
+        return has_subseq(n//10,seq//10)
+    return has_subseq(n//10,seq)
