@@ -15,3 +15,15 @@ def digit_index_factory(num, k):
     -1
     """
     "*** YOUR CODE HERE ***"
+    def func():
+        i = 0
+        rm_num = num%10
+        rest = num//10
+        while rest:
+            i += 1
+            if rest % 10 == k:
+                return i
+            rest //= 10
+        return -1
+
+    return func

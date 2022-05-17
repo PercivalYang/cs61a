@@ -9,3 +9,8 @@ def hop():
     7
     """
     "*** YOUR CODE HERE ***"
+    def fun1(x):
+        def fun2(y):
+            return y
+        return fun2
+    return fun1
