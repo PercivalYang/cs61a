@@ -1,19 +1,25 @@
 {
     "name": "Homework 2",
-    "endpoint": "cal/cs61a/sp20/hw02",
+    "endpoint": "cal/cs61a/sp22/hw02",
     "src": [
-        "hw02.py"
+        "hw02.py",
+        "parsons_probs/count_until_larger.py",
+        "parsons_probs/filter_sequence.py"
     ],
     "tests": {
         "hw*.py": "doctest",
-        "tests/*.py": "ok_test"
+        "tests/*.py": "ok_test",
+        "parsons_probs/count_until_larger.py:count_until_larger": "doctest",
+        "parsons_probs/filter_sequence.py:filter_sequence": "doctest"
     },
     "default_tests": [
         "product",
         "accumulate",
         "summation_using_accumulate",
         "product_using_accumulate",
-        "make_repeater"
+        "hailstone",
+        "count_until_larger",
+        "filter_sequence"
     ],
     "protocols": [
         "restore",
@@ -21,5 +27,17 @@
         "grading",
         "analytics",
         "backup"
-    ]
+    ],
+    "parsons": {
+        "control": {
+            "required": [
+                "count_until_larger"
+            ]
+        },
+        "hof": {
+            "required": [
+                "filter_sequence"
+            ]
+        }
+    }
 }
