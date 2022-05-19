@@ -89,15 +89,7 @@ def accuracy(typed, reference):
     reference_words = split(reference)
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
-    if typed == '':
-        if reference == '':
-            return 100.0
-        return 0.0
-    corr_num = 0
-    for i in range(min(len(typed_words),len(reference_words))):
-        if typed_words[i] == reference_words[i]:
-            corr_num += 1
-    return corr_num / len(typed_words) * 100
+    true_nums = [tn for i,tn in enumerate(typed_words) if tn==reference_words[i]]
     # END PROBLEM 3
 
 
@@ -116,8 +108,6 @@ def wpm(typed, elapsed):
     assert elapsed > 0, 'Elapsed time must be positive'
     # BEGIN PROBLEM 4
     "*** YOUR CODE HERE ***"
-    words_len = len(typed)
-    return words_len/5 * 60/elapsed
     # END PROBLEM 4
 
 
@@ -145,15 +135,6 @@ def autocorrect(typed_word, word_list, diff_function, limit):
     """
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
-    if typed_word in word_list:
-        return typed_word
-    score_lst = []
-    for word in word_list:
-        score_lst.append(diff_function(typed_word,word,limit))
-    min_index, min_score = min(enumerate(score_lst),key=lambda x:x[1])
-    if min_score <= limit:
-        return word_list[min_index]
-    return typed_word
     # END PROBLEM 5
 
 
@@ -180,15 +161,7 @@ def sphinx_swaps(start, goal, limit):
     5
     """
     # BEGIN PROBLEM 6
-    if len(start) == 0:
-        return len(goal)
-    if len(goal) == 0:
-        return len(start)
-    if limit  0:
-        return max(len(goal), len(start))
-    return int(start[0]!=goal[0]) + sphinx_swaps(start[1:], goal[1:], [limit if start[0]==goal[0] else limit-1][0])
-    
-
+    assert False, 'Remove this line'
     # END PROBLEM 6
 
 
