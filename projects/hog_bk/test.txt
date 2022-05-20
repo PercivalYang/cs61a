@@ -1,0 +1,134 @@
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 193, in hog.announce_highest
+Failed example:
+    f1 = f0(12, 0)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[1]>", line 1, in <module>
+        f1 = f0(12, 0)
+    TypeError: 'NoneType' object is not callable
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 194, in hog.announce_highest
+Failed example:
+    f2 = f1(12, 11)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[2]>", line 1, in <module>
+        f2 = f1(12, 11)
+    NameError: name 'f1' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 196, in hog.announce_highest
+Failed example:
+    f3 = f2(20, 11)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[3]>", line 1, in <module>
+        f3 = f2(20, 11)
+    NameError: name 'f2' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 197, in hog.announce_highest
+Failed example:
+    f4 = f3(13, 20)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[4]>", line 1, in <module>
+        f4 = f3(13, 20)
+    NameError: name 'f3' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 198, in hog.announce_highest
+Failed example:
+    f5 = f4(20, 35)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[5]>", line 1, in <module>
+        f5 = f4(20, 35)
+    NameError: name 'f4' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 200, in hog.announce_highest
+Failed example:
+    f6 = f5(20, 47) # Player 1 gets 12 points; not enough for a new high
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[6]>", line 1, in <module>
+        f6 = f5(20, 47) # Player 1 gets 12 points; not enough for a new high
+    NameError: name 'f5' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 201, in hog.announce_highest
+Failed example:
+    f7 = f6(21, 47)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[7]>", line 1, in <module>
+        f7 = f6(21, 47)
+    NameError: name 'f6' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 202, in hog.announce_highest
+Failed example:
+    f8 = f7(21, 77)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[8]>", line 1, in <module>
+        f8 = f7(21, 77)
+    NameError: name 'f7' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 204, in hog.announce_highest
+Failed example:
+    f9 = f8(77, 22) # Swap!
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[9]>", line 1, in <module>
+        f9 = f8(77, 22) # Swap!
+    NameError: name 'f8' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 205, in hog.announce_highest
+Failed example:
+    f10 = f9(33, 77) # Swap!
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.announce_highest[10]>", line 1, in <module>
+        f10 = f9(33, 77) # Swap!
+    NameError: name 'f9' is not defined
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 245, in hog.make_averaged
+Failed example:
+    averaged_dice()
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest hog.make_averaged[2]>", line 1, in <module>
+        averaged_dice()
+    TypeError: 'NoneType' object is not callable
+**********************************************************************
+File "/home/yzy/cs61a/projects/hog/hog.py", line 259, in hog.max_scoring_num_rolls
+Failed example:
+    max_scoring_num_rolls(dice)
+Expected:
+    1
+Got nothing
+**********************************************************************
+3 items had failures:
+  10 of  11 in hog.announce_highest
+   1 of   3 in hog.make_averaged
+   1 of   2 in hog.max_scoring_num_rolls
+***Test Failed*** 12 failures.
